@@ -5,10 +5,10 @@ import {
   Titulo,
   Label,
   Input,
-  Botao,
   TextoBotao,
 } from './styles';
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/logo.png';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -19,9 +19,22 @@ export default function Home() {
       <Input />
       <Label>Gasolina (Preço por litro):</Label>
       <Input />
-      <Botao>
+
+      <Link
+        style={{
+          padding: 10,
+          border: 'none',
+          borderRadius: 8,
+          backgroundColor: '#202020',
+          cursor: 'pointer',
+          marginTop: 20,
+          width: '30%',
+          textAlign: 'center',
+          textDecoration: 'none',
+        }}
+        to="/detalhes">
         <TextoBotao>Calcular</TextoBotao>
-      </Botao>
+      </Link>
     </Container>
   );
 }

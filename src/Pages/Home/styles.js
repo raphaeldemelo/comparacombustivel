@@ -29,15 +29,7 @@ padding: 5px;
 margin-top: 3px;
 width: 30%;
 `;
-export const Botao = styled.button`
-padding: 10px;
-border: none;
-border-radius: 8px;
-background-color: #202020;
-cursor: pointer;
-margin-top: 20px;
-width: 30%;
-`;
+
 export const TextoBotao = styled.span`
 color: #fff;
 font-weight: bold;
