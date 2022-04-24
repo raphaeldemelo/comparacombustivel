@@ -3,6 +3,7 @@ import {
     Container,
     Imagem,
     Titulo,
+    Botao,
     TextoBotao,
 } from './styles';
 import gas from '../../assets/gas.png';
@@ -20,22 +21,25 @@ export default function Detalhes() {
             <span>Álcool: R$4.60</span>
             <span>Gasolina: R$7.60</span>
 
-            <Link
-                to='/'
-                style={{
-                    padding: 10,
-                    border: 'none',
-                    borderRadius: 8,
-                    backgroundColor: '#202020',
-                    cursor: 'pointer',
-                    marginTop: 20,
-                    width: '30%',
-                    textAlign: 'center',
-                    textDecoration: 'none',
-                }}
-            >
-                <TextoBotao>Calcular novamente</TextoBotao>
-            </Link>
+            <Botao>
+
+                <Link
+                    to='/'
+                    style={{
+                        padding: 10,
+                        border: 'none',
+                        borderRadius: 8,
+                        backgroundColor: '#202020',
+                        cursor: 'pointer',
+                        marginTop: 20,
+                        width: '30%',
+                        textAlign: 'center',
+                        textDecoration: 'none',
+                    }}
+                >
+                    <TextoBotao>Calcular novamente</TextoBotao>
+                </Link>
+            </Botao>
         </Container>
     );
 }

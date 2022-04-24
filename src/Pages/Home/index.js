@@ -5,6 +5,7 @@ import {
   Titulo,
   Label,
   Input,
+  Botao,
   TextoBotao,
 } from './styles';
 import Logo from '../../assets/logo.png';
@@ -20,21 +21,23 @@ export default function Home() {
       <Label>Gasolina (Preço por litro):</Label>
       <Input />
 
-      <Link
-        style={{
-          padding: 10,
-          border: 'none',
-          borderRadius: 8,
-          backgroundColor: '#202020',
-          cursor: 'pointer',
-          marginTop: 20,
-          width: '30%',
-          textAlign: 'center',
-          textDecoration: 'none',
-        }}
-        to="/detalhes">
-        <TextoBotao>Calcular</TextoBotao>
-      </Link>
+      <Botao>
+        <Link
+          style={{
+            padding: 10,
+            border: 'none',
+            borderRadius: 8,
+            backgroundColor: '#202020',
+            cursor: 'pointer',
+            marginTop: 20,
+            width: '30%',
+            textAlign: 'center',
+            textDecoration: 'none',
+          }}
+          to="/detalhes">
+          <TextoBotao>Calcular</TextoBotao>
+        </Link>
+      </Botao>
     </Container>
   );
 }
