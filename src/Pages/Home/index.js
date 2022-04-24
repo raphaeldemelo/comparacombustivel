@@ -17,9 +17,13 @@ export default function Home() {
       <Imagem src={Logo} />
       <Titulo>Qual é a melhor opção?</Titulo>
       <Label>Álcool (Preço por litro):</Label>
-      <Input />
+      <Input 
+      placeholder='valor do álcool'
+      />
       <Label>Gasolina (Preço por litro):</Label>
-      <Input />
+      <Input 
+      placeholder='valor da gasolina'
+      />
 
       <Botao>
         <Link
