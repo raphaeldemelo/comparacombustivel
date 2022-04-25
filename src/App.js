@@ -1,11 +1,15 @@
 import React from 'react';
 import Routes from './routes';
 
+import UserProvider from './Contexts/user';
+
 function App() {
   return (
-    <div>
-      <Routes />
-    </div>
+    <UserProvider>
+      <div>
+        <Routes />
+      </div>
+    </UserProvider>
   );
 }
 

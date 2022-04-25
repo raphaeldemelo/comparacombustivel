@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
     Container,
     Imagem,
@@ -9,31 +9,30 @@ import {
 import gas from '../../assets/gas.png';
 import { Link } from 'react-router-dom';
 
+import { UserContext } from '../../Contexts/user';
+
 export default function Detalhes() {
 
+    const { precoAlcool, setPrecoAlcool, precoGasolina, setPrecoGasolina, resultado } = useContext(UserContext);
+
+    function CalcularNovamente() {
+        setPrecoAlcool('');
+        setPrecoGasolina('');
+    }
     return (
         <Container>
             <Imagem src={gas} />
 
-            <Titulo>Compensa usar Álcool</Titulo>
+            <Titulo>Compensa usar {resultado}</Titulo>
 
             <strong>Com os preços:</strong>
-            <span>Álcool: R$4.60</span>
-            <span>Gasolina: R$7.60</span>
+            <span>Álcool: R${precoAlcool}</span>
+            <span>Gasolina: R${precoGasolina}</span>
 
-            <Botao>
-
+            <Botao onClick={CalcularNovamente}>
                 <Link
                     to='/'
                     style={{
-                        padding: 10,
-                        border: 'none',
-                        borderRadius: 8,
-                        backgroundColor: '#202020',
-                        cursor: 'pointer',
-                        marginTop: 20,
-                        width: '30%',
-                        textAlign: 'center',
                         textDecoration: 'none',
                     }}
                 >

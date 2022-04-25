@@ -26,6 +26,11 @@ width: 30%;
 text-align: center;
 text-decoration: none;
 
+:hover{
+    transition: all 0.25s;
+    background-color: red;
+}
+
 @media only screen and (max-width: 600px){
 width: 100%;
 }

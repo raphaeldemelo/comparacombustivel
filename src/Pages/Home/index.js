@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Container,
   Imagem,
@@ -11,18 +11,38 @@ import {
 import Logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 
+import { UserContext } from '../../Contexts/user';
+
 export default function Home() {
+
+  const { setResultado, precoAlcool, precoGasolina, setPrecoAlcool, setPrecoGasolina } = useContext(UserContext);
+
+  function calcular() {
+
+    const resposta = precoAlcool / precoGasolina;
+
+    if (resposta < 0.7) {
+      return setResultado('Álcool')
+    } else {
+      return setResultado('Gasolina')
+    }
+  }
+
   return (
     <Container>
       <Imagem src={Logo} />
       <Titulo>Qual é a melhor opção?</Titulo>
       <Label>Álcool (Preço por litro):</Label>
-      <Input 
-      placeholder='valor do álcool'
+      <Input
+        placeholder='valor do álcool'
+        value={precoAlcool}
+        onChange={(e) => setPrecoAlcool(e.target.value)}
       />
       <Label>Gasolina (Preço por litro):</Label>
-      <Input 
-      placeholder='valor da gasolina'
+      <Input
+        placeholder='valor da gasolina'
+        value={precoGasolina}
+        onChange={(e) => setPrecoGasolina(e.target.value)}
       />
 
       <Botao>
@@ -39,9 +59,10 @@ export default function Home() {
             textDecoration: 'none',
           }}
           to="/detalhes">
-          <TextoBotao>Calcular</TextoBotao>
+          <TextoBotao onClick={calcular()}>Calcular</TextoBotao>
         </Link>
       </Botao>
     </Container>
   );
+
 }
